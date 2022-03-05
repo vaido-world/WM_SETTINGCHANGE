@@ -5,7 +5,7 @@ A win32 program to broadcast WM_SETTINGCHANGE to all the windows, written in D l
 > Mostly used update changes to Path environment variable in Command Prompt.  
 > After broadcast of this signal, reopen applications, for changes to be visible.  
 > 
-> Note: 
+> Note:  
 > Windows Command Prompt is programmed to take the new changes on the Path Variable on the launch of new instance.
 
 
