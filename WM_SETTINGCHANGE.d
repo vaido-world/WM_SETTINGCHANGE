@@ -64,8 +64,7 @@ import std.string: isNumeric;
     * Added Switch Statement for Error handling: Exit status, Error level
     * Increased window "timeout" from 1 to 1000
 
-    
-
+    Online Repository: https://github.com/vaido-world/WM_SETTINGCHANGE
 
     Params:
         broadcastAddress = "Policy"      When the system sends this message as a result of a change in policy settings, this parameter points to this string.
@@ -125,12 +124,16 @@ __________________THE_CORE_OF_THE_PROGRAM__________________:
     );
     
 
+
+__________________INFORMATIVE_WARNINGS__________________:
+
     if(result == 0)
     {
 
         writeln("The function SendMessageTimeoutW did not even start broadcasting message.");
         
     } 
+	
 
 	//  TODO: Unable to get lpdwResult, unsure where the problem. 
 	//	The pointers are tricky subject in D language, C language and Windows Win32 API
