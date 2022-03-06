@@ -156,7 +156,7 @@ __________________INFORMATIVE_WARNINGS__________________:
     switch (lastError){
     
         case ERROR_SUCCESS:
-			writeln("WM_SETTINGCHANGE.d: Sent a WM_SETTINGCHANGE of ", broadcastAddress, ", broadcast to all top windows. Success.");
+			writeln(__FILE__, ": Success. Sent a WM_SETTINGCHANGE of ", broadcastAddress, ", broadcast to all top windows.");
             break;
         
         case ERROR_TIMEOUT:
