@@ -17,10 +17,9 @@ import std.regex;
 import std.string: isNumeric;
 
  int main(string[] args){
- 
+
     if (args.length > 1) {
-    
-        switch (args.length){
+        final switch (args.length){
         
             case 2:
                 return broadcastSettingChange(args[1]);
@@ -33,12 +32,12 @@ import std.string: isNumeric;
                 } else {
                     writeln("Invalid timeout value: ", args[2]," (must be uint integer)");
                 }
-                break;
-                
-            default:
-                return broadcastSettingChange();
+                break;        
         }
-    }
+    } else {
+	
+		return broadcastSettingChange();
+	}
 
     return 1;
 
@@ -80,8 +79,9 @@ import std.string: isNumeric;
  */
  
 
- int broadcastSettingChange (string broadcastAddress="Environment", uint timeout=1000)
+ @trusted int broadcastSettingChange (string broadcastAddress="Environment", uint timeout=1000)
  {
+ 
  
 /*__________________Check if message parameter is one of the available options.__________________*/
     switch (broadcastAddress)
@@ -103,17 +103,16 @@ import std.string: isNumeric;
             writeln(" Environment");
     
     }
-    
-    
-    
-/*__________________Core of WM_SETTINGCHANGE.d program__________________*/
+
+__________________THE_CORE_OF_THE_PROGRAM__________________:
+
     void* hWnd = HWND_BROADCAST;
     uint  Msg = WM_SETTINGCHANGE;
     uint  wParam = 0;
     int   lParam = cast( LPARAM )broadcastAddress.toUTF16z;
     uint  fuFlags = SMTO_ABORTIFHUNG;
     uint  uTimeout = timeout;
-    uint* lpdwResult;
+    static uint* lpdwResult;
     
     int result = SendMessageTimeoutW(
         hWnd,
@@ -122,7 +121,7 @@ import std.string: isNumeric;
         lParam,
         fuFlags,
         uTimeout,
-        cast( PDWORD_PTR )&lpdwResult // https://www.autohotkey.com/board/topic/80581-how-to-detect-a-hung-window/
+        cast( PDWORD_PTR ) &lpdwResult // https://www.autohotkey.com/board/topic/80581-how-to-detect-a-hung-window/
     );
     
 
@@ -154,6 +153,7 @@ import std.string: isNumeric;
     switch (lastError){
     
         case ERROR_SUCCESS:
+			writeln("WM_SETTINGCHANGE.d: Sent a WM_SETTINGCHANGE of ", broadcastAddress, ", broadcast to all top windows. Success.");
             break;
         
         case ERROR_TIMEOUT:
