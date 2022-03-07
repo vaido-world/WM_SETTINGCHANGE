@@ -115,8 +115,12 @@ __________________THE_CORE_OF_THE_PROGRAM__________________:
     int   lParam = cast( LPARAM )broadcastAddress.toUTF16z;
     uint  fuFlags = SMTO_ABORTIFHUNG;
     uint  uTimeout = timeout;
-    static uint* lpdwResult;
     
+    import core.sys.windows.winnt;
+    DWORDLONG lpdwResults = 1;
+    PDWORD_PTR lpdwResult = cast( PDWORD_PTR ) &lpdwResults;
+    writeln("first", *lpdwResult);
+
     int result = SendMessageTimeoutW(
         hWnd,
         Msg,
@@ -124,7 +128,7 @@ __________________THE_CORE_OF_THE_PROGRAM__________________:
         lParam,
         fuFlags,
         uTimeout,
-        cast( PDWORD_PTR ) &lpdwResult // https://www.autohotkey.com/board/topic/80581-how-to-detect-a-hung-window/
+        cast( PDWORD_PTR ) &lpdwResults // https://www.autohotkey.com/board/topic/80581-how-to-detect-a-hung-window/
     );
     
 
@@ -144,11 +148,13 @@ __________________INFORMATIVE_WARNINGS__________________:
     //
     //                     object.Error@(0): Access Violation
     //
-    // if(*lpdwResult != 0){ 
-    //
-    //    writeln("WM_SETTINGCHANGE message was not processed by the top-level windows.");
-    //
-    //}
+    if(*lpdwResult != 0){ 
+
+        writeln("WM_SETTINGCHANGE message was not processed by the top-level windows.");
+
+    }
+    
+    writeln("second", *lpdwResult);
     
 
 /*__________________WIN32 Error handling for SendMessageTimeoutW fuction__________________*/
