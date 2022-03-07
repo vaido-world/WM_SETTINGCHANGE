@@ -118,8 +118,8 @@ __________________THE_CORE_OF_THE_PROGRAM__________________:
     
     import core.sys.windows.winnt;
     DWORDLONG lpdwResults = 1;
-    PDWORD_PTR lpdwResult = cast( PDWORD_PTR ) &lpdwResults;
-    writeln("first", *lpdwResult);
+    //PDWORD_PTR lpdwResult = cast( PDWORD_PTR ) &lpdwResults;
+    writeln("first", lpdwResults);
 
     int result = SendMessageTimeoutW(
         hWnd,
@@ -148,13 +148,13 @@ __________________INFORMATIVE_WARNINGS__________________:
     //
     //                     object.Error@(0): Access Violation
     //
-    if(*lpdwResult != 0){ 
+    if(lpdwResults != 0){ 
 
         writeln("WM_SETTINGCHANGE message was not processed by the top-level windows.");
 
     }
     
-    writeln("second", *lpdwResult);
+    writeln("second", lpdwResults);
     
 
 /*__________________WIN32 Error handling for SendMessageTimeoutW fuction__________________*/
