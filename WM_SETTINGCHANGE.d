@@ -19,25 +19,29 @@ import std.string: isNumeric;
  int main(string[] args){
 
     if (args.length > 1) {
-        final switch (args.length){
+        switch (args.length){
         
             case 2:
                 return broadcastSettingChange(args[1]);
                 break;
-                
-            case 3:
-                string argument2 = args[2].replaceAll(regex(r"[^0-9.]","g"), "");
-                if (argument2.isNumeric){
-                    return broadcastSettingChange(args[1], std.conv.to!uint(argument2));
-                } else {
-                    writeln("Invalid timeout value: ", args[2]," (must be uint integer)");
-                }
-                break;        
+               
+            default:
+                case 3:
+                    string argument2 = args[2].replaceAll(regex(r"[^0-9.]","g"), "");
+                    if (argument2.isNumeric){
+                        return broadcastSettingChange(args[1], std.conv.to!uint(argument2));
+                    } else {
+                        writeln("Invalid timeout value: ", args[2]," (must be uint integer)");
+                    }
+                    break;       
+
+
+
         }
     } else {
-	
-		return broadcastSettingChange();
-	}
+    
+        return broadcastSettingChange();
+    }
 
     return 1;
 
@@ -133,13 +137,13 @@ __________________INFORMATIVE_WARNINGS__________________:
         writeln("The function SendMessageTimeoutW did not even start broadcasting message.");
         
     } 
-	
+    
 
-	//  TODO: Unable to get lpdwResult, unsure where the problem. 
-	//	The pointers are tricky subject in D language, C language and Windows Win32 API
-	//
-	//                     object.Error@(0): Access Violation
-	//
+    //  TODO: Unable to get lpdwResult, unsure where the problem. 
+    //    The pointers are tricky subject in D language, C language and Windows Win32 API
+    //
+    //                     object.Error@(0): Access Violation
+    //
     // if(*lpdwResult != 0){ 
     //
     //    writeln("WM_SETTINGCHANGE message was not processed by the top-level windows.");
@@ -156,7 +160,7 @@ __________________INFORMATIVE_WARNINGS__________________:
     switch (lastError){
     
         case ERROR_SUCCESS:
-			writeln(__FILE__, ": Success. Sent a WM_SETTINGCHANGE of ", broadcastAddress, ", broadcast to all top windows.");
+            writeln(__FILE__, ": Success. Sent a WM_SETTINGCHANGE of ", broadcastAddress, ", broadcast to all top windows.");
             break;
         
         case ERROR_TIMEOUT:
