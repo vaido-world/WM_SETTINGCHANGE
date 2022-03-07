@@ -27,3 +27,4 @@ Compilation:
 https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendmessagetimeouta  
 https://docs.microsoft.com/en-us/windows/win32/winmsg/wm-settingchange  
 https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes  
+https://docs.microsoft.com/en-us/windows/win32/winprog/windows-data-types
