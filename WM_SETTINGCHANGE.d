@@ -142,12 +142,6 @@ __________________INFORMATIVE_WARNINGS__________________:
         
     } 
     
-
-    //  TODO: Unable to get lpdwResult, unsure where the problem. 
-    //    The pointers are tricky subject in D language, C language and Windows Win32 API
-    //
-    //                     object.Error@(0): Access Violation
-    //
     if(lpdwResults != 0){ 
 
         writeln("WM_SETTINGCHANGE message was not processed by the top-level windows.");
