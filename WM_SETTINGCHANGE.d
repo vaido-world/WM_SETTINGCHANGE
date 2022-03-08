@@ -1,15 +1,16 @@
 module WM_SETTINGCHANGE;
 
+import std.stdio;
 
  static if (is(typeof((){import command_line_interface;}))) {
     import command_line_interface; 
  
   } else {
-    import std.stdio;
-    void main() {
-    writeln("Using without user interface, command_line_interface, Default values are used.");
-    writeln("if the chaches of dmd compiler are cleared and source file of command_line_interface.d is not here, the module is not loaded.");
-    broadcastSettingChange();
+
+        void main(string[] args) {
+            writeln("Using without user interface, command_line_interface, Default values are used.");
+            writeln("if the cache of dmd compiler are cleared and source file of command_line_interface.d is not here, the module is not loaded.");
+            broadcastSettingChange();
     
     }
   
@@ -91,7 +92,9 @@ __________________CHECK_FIRST_ARGUMENT__________________:
     }
     
 __________________CHECK_SECOND_ARGUMENT__________________:
-writeln("Comamnd2");
+
+// string argument2 = args[2].replaceAll(regex(r"[^0-9.]","g"), "");
+//writeln("Comamnd2");
  
 
 
