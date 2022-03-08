@@ -18,7 +18,11 @@ Simple Usage:
 Advanced Usage:
 1. `WM_SETTINGCHANGE.exe Environment 5000`  
 1. `WM_SETTINGCHANGE.exe Policy 5000`  
-2. `WM_SETTINGCHANGE.exe intl 5000`  
+1. `WM_SETTINGCHANGE.exe intl 5000`
+3. `rdmd WM_SETTINGCHANGE.d Environment 5000`  
+3. `rdmd WM_SETTINGCHANGE.d Policy 5000`  
+4. `rdmd WM_SETTINGCHANGE.d intl 5000`  
+
 
 Compilation (.exe):
  `rdmd compile.d`  
