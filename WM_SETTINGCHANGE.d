@@ -1,5 +1,7 @@
 module WM_SETTINGCHANGE;
 
+version(Windows) pragma(lib, "user32.lib");
+
 import std.stdio;
 
  static if (is(typeof((){import command_line_interface;}))) {
@@ -10,14 +12,13 @@ import std.stdio;
         void main(string[] args) {
             writeln("Using without user interface, command_line_interface, Default values are used.");
             writeln("if the cache of dmd compiler are cleared and source file of command_line_interface.d is not here, the module is not loaded.");
-            broadcastSettingChange();
+            return (broadcastSettingChange());
     
     }
   
   }
 
 import std.utf;
-version(Windows) pragma(lib, "user32.lib");
 
 import core.sys.windows.windows : SendMessageTimeoutW;
 import core.sys.windows.windows : GetLastError;
@@ -27,8 +28,6 @@ import core.sys.windows.windows : LPARAM;
 import core.sys.windows.windows : HWND_BROADCAST;
 import core.sys.windows.windows : WM_SETTINGCHANGE;
 import core.sys.windows.basetsd : PDWORD_PTR;
-
-import std.stdio;
 
 
  /**
@@ -90,12 +89,6 @@ __________________CHECK_FIRST_ARGUMENT__________________:
             writeln(" Environment");
     
     }
-    
-__________________CHECK_SECOND_ARGUMENT__________________:
-
-// string argument2 = args[2].replaceAll(regex(r"[^0-9.]","g"), "");
-//writeln("Comamnd2");
- 
 
 
 __________________THE_CORE_OF_THE_PROGRAM__________________:
@@ -134,6 +127,7 @@ __________________INFORMATIVE_WARNINGS__________________:
     if(lpdwResult != 0){ 
 
         writeln("WM_SETTINGCHANGE message was not processed by the top-level windows.");
+        writeln("This Error is related to timeout return in lpdwResult of WM_SETTINGCHANGE of SendMessageTimeoutW");
 
     }
     
