@@ -1,3 +1,7 @@
+module WM_SETTINGCHANGE;
+
+import command_line_interface; 
+
 import std.utf;
 version(Windows) pragma(lib, "user32.lib");
 
