@@ -3,6 +3,16 @@ module WM_SETTINGCHANGE;
 
  static if (is(typeof((){import command_line_interface;}))) {
     import command_line_interface; 
+ 
+  } else {
+    import std.stdio;
+    void main() {
+    writeln("Using without user interface, command_line_interface, Default values are used.");
+    writeln("if the chaches of dmd compiler are cleared and source file of command_line_interface.d is not here, the module is not loaded.");
+    broadcastSettingChange();
+    
+    }
+  
   }
 
 import std.utf;
@@ -58,7 +68,7 @@ import std.stdio;
  @trusted int broadcastSettingChange (string broadcastAddress="Environment", uint timeout=1000)
  {
  
- 
+__________________CHECK_FIRST_ARGUMENT__________________:
 /*__________________Check if message parameter is one of the available options.__________________*/
     switch (broadcastAddress)
     {
@@ -79,6 +89,11 @@ import std.stdio;
             writeln(" Environment");
     
     }
+    
+__________________CHECK_SECOND_ARGUMENT__________________:
+writeln("Comamnd2");
+ 
+
 
 __________________THE_CORE_OF_THE_PROGRAM__________________:
 
