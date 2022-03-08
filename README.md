@@ -21,7 +21,7 @@ Advanced Usage:
 2. `WM_SETTINGCHANGE.exe intl 5000`  
 
 Compilation:
- `dmd WM_SETTINGCHANGE.d`  
+ `rdmd compile.d`  
  
 ---
 https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendmessagetimeouta  
