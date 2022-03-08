@@ -117,9 +117,7 @@ __________________THE_CORE_OF_THE_PROGRAM__________________:
     uint  uTimeout = timeout;
     
     import core.sys.windows.winnt;
-    DWORDLONG lpdwResults = 1;
-    //PDWORD_PTR lpdwResult = cast( PDWORD_PTR ) &lpdwResults;
-    writeln("first", lpdwResults);
+    DWORDLONG lpdwResult = 1;
 
     int result = SendMessageTimeoutW(
         hWnd,
@@ -128,7 +126,7 @@ __________________THE_CORE_OF_THE_PROGRAM__________________:
         lParam,
         fuFlags,
         uTimeout,
-        cast( PDWORD_PTR ) &lpdwResults // https://www.autohotkey.com/board/topic/80581-how-to-detect-a-hung-window/
+        cast( PDWORD_PTR ) &lpdwResult // https://www.autohotkey.com/board/topic/80581-how-to-detect-a-hung-window/
     );
     
 
@@ -142,13 +140,11 @@ __________________INFORMATIVE_WARNINGS__________________:
         
     } 
     
-    if(lpdwResults != 0){ 
+    if(lpdwResult != 0){ 
 
         writeln("WM_SETTINGCHANGE message was not processed by the top-level windows.");
 
     }
-    
-    writeln("second", lpdwResults);
     
 
 /*__________________WIN32 Error handling for SendMessageTimeoutW fuction__________________*/
