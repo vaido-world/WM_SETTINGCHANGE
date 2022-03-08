@@ -20,7 +20,7 @@ Advanced Usage:
 1. `WM_SETTINGCHANGE.exe Policy 5000`  
 2. `WM_SETTINGCHANGE.exe intl 5000`  
 
-Compilation:
+Compilation (.exe):
  `rdmd compile.d`  
  
 ---
