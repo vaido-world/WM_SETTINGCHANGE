@@ -4,20 +4,6 @@ version(Windows) pragma(lib, "user32.lib");
 
 import std.stdio;
 
- static if (is(typeof((){import command_line_interface;}))) {
-    import command_line_interface; 
- 
-  } else {
-
-        void main(string[] args) {
-            writeln("Using without user interface, command_line_interface, Default values are used.");
-            writeln("if the cache of dmd compiler are cleared and source file of command_line_interface.d is not here, the module is not loaded.");
-            return (broadcastSettingChange());
-    
-    }
-  
-  }
-
 import std.utf;
 
 import core.sys.windows.windows : SendMessageTimeoutW;
@@ -127,7 +113,7 @@ __________________INFORMATIVE_WARNINGS__________________:
     if(lpdwResult != 0){ 
 
         writeln("WM_SETTINGCHANGE message was not processed by the top-level windows.");
-        writeln("This Error is related to timeout return in lpdwResult of WM_SETTINGCHANGE of SendMessageTimeoutW");
+		writeln("This Error is related to timeout return in lpdwResult of WM_SETTINGCHANGE of SendMessageTimeoutW");
 
     }
     
