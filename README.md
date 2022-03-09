@@ -17,7 +17,7 @@ Simple Usage:
 1. Download [SendMessage_WM_SETTINGCHANGE.exe](https://github.com/vaido-world/WM_SETTINGCHANGE/releases/latest/download/WM_SETTINGCHANGE.exe
 )
    *  `SendMessage_WM_SETTINGCHANGE.exe`  (**Default**: `<Environment> <1000>`)
-2. Download [Source Code](https://github.com/vaido-world/WM_SETTINGCHANGE/archive/refs/heads/main.zip)  
+2. Download [Source Code .zip](https://github.com/vaido-world/WM_SETTINGCHANGE/archive/refs/heads/main.zip)  
    `rdmd command_line_interface.d`  (**Default**: `<Environment> <1000>`)
 
 Advanced Usage:  
