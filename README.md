@@ -19,10 +19,22 @@ Advanced Usage:
 1. `WM_SETTINGCHANGE.exe Environment 5000`  
 1. `WM_SETTINGCHANGE.exe Policy 5000`  
 1. `WM_SETTINGCHANGE.exe intl 5000`
-3. `rdmd command_line_interface.d Environment 5000`  
-3. `rdmd command_line_interface.d Policy 5000`  
-4. `rdmd command_line_interface.d intl 5000`  
+2. Scripting:  
+   3. `rdmd command_line_interface.d Environment 5000`  
+   4. `rdmd command_line_interface.d Policy 5000`  
+   5. `rdmd command_line_interface.d intl 5000`  
+2. Library:  
+   ```
+   import std.stdio;
 
+   import WM_SETTINGCHANGE;
+
+   void main(){
+
+    broadcastSettingChange("Environment", 5000);
+
+   }
+   ```
 
 Compilation (.exe):
  `rdmd compile.d`  
