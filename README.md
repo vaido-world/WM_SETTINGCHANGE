@@ -17,13 +17,13 @@ Simple Usage:
 
 Advanced Usage:
 1. As Compiled
-1. `WM_SETTINGCHANGE.exe Environment 5000`  
-1. `WM_SETTINGCHANGE.exe Policy 5000`  
-1. `WM_SETTINGCHANGE.exe intl 5000`
+* `WM_SETTINGCHANGE.exe Environment 5000`  
+* `WM_SETTINGCHANGE.exe Policy 5000`  
+* `WM_SETTINGCHANGE.exe intl 5000`
 2. As Script:  
-   3. `rdmd command_line_interface.d Environment 5000`  
-   4. `rdmd command_line_interface.d Policy 5000`  
-   5. `rdmd command_line_interface.d intl 5000`  
+   * `rdmd command_line_interface.d Environment 5000`  
+   * `rdmd command_line_interface.d Policy 5000`  
+   * `rdmd command_line_interface.d intl 5000`  
 2. As Library:  
    ```
    import std.stdio;
