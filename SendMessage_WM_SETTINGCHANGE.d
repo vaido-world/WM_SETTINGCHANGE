@@ -1,4 +1,4 @@
-module WM_SETTINGCHANGE;
+module SendMessage_WM_SETTINGCHANGE;
 
 version(Windows) pragma(lib, "user32.lib");
 
