@@ -17,9 +17,9 @@ Simple Usage:
 
 Advanced Usage:
 1. As Compiled
-* `WM_SETTINGCHANGE.exe Environment 5000`  
-* `WM_SETTINGCHANGE.exe Policy 5000`  
-* `WM_SETTINGCHANGE.exe intl 5000`
+   * `WM_SETTINGCHANGE.exe Environment 5000`  
+   * `WM_SETTINGCHANGE.exe Policy 5000`  
+   * `WM_SETTINGCHANGE.exe intl 5000`
 2. As Script:  
    * `rdmd command_line_interface.d Environment 5000`  
    * `rdmd command_line_interface.d Policy 5000`  
