@@ -16,8 +16,7 @@ Simple Usage:
 2. `rdmd command_line_interface.d`  (Default: Environment 1000)
 
 Advanced Usage:  
-1. Compilation (.exe):  `rdmd compile.d`  
-3. As Compiled  
+1. As Compiled  
    `executable.exe <broadcastAddress> <unresponsiveWindowTimeout>`   
    * `WM_SETTINGCHANGE.exe Environment 5000`  
    * `WM_SETTINGCHANGE.exe Policy 5000`  
@@ -40,6 +39,7 @@ Advanced Usage:
 
    }
    ```
+1. Compilation (.exe):  `rdmd compile.d`  
 
 ---
 
