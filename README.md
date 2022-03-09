@@ -14,8 +14,8 @@ A win32 program to broadcast WM_SETTINGCHANGE to all the windows, written in D l
 The first version appeared here: https://forum.dlang.org/post/ngkhsaadchcqbdvmorot@forum.dlang.org
 
 Simple Usage: 
-1. `SendMessage_WM_SETTINGCHANGE.exe`  (Default: `<Environment> <1000>`)
-2. `rdmd command_line_interface.d`  (Default: `<Environment> <1000>`)
+1. `SendMessage_WM_SETTINGCHANGE.exe`  (**Default**: `<Environment> <1000>`)
+2. `rdmd command_line_interface.d`  (**Default**: `<Environment> <1000>`)
 
 Advanced Usage:  
 1. As Compiled  
