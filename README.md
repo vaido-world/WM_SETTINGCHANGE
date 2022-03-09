@@ -13,15 +13,15 @@ The first version appeared here: https://forum.dlang.org/post/ngkhsaadchcqbdvmor
 
 Simple Usage: 
 1. `WM_SETTINGCHANGE.exe`  (Default: Environment 1000)
-2. `rdmd WM_SETTINGCHANGE.d`  (Default: Environment 1000)
+2. `rdmd command_line_interface.d`  (Default: Environment 1000)
 
 Advanced Usage:
 1. `WM_SETTINGCHANGE.exe Environment 5000`  
 1. `WM_SETTINGCHANGE.exe Policy 5000`  
 1. `WM_SETTINGCHANGE.exe intl 5000`
-3. `rdmd WM_SETTINGCHANGE.d Environment 5000`  
-3. `rdmd WM_SETTINGCHANGE.d Policy 5000`  
-4. `rdmd WM_SETTINGCHANGE.d intl 5000`  
+3. `rdmd command_line_interface.d Environment 5000`  
+3. `rdmd command_line_interface.d Policy 5000`  
+4. `rdmd command_line_interface.d intl 5000`  
 
 
 Compilation (.exe):
