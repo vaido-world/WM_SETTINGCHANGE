@@ -1,4 +1,4 @@
-import WM_SETTINGCHANGE;
+import SendMessage_WM_SETTINGCHANGE;
 
 import std.stdio;
 import std.regex;
