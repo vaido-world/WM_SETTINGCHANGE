@@ -11,7 +11,7 @@ A win32 program to broadcast WM_SETTINGCHANGE to all the windows, written in D l
 > Windows Command Prompt is programmed to take the new changes on the Path Variable on the launch of new instance.
 
 
-The first version appeared here: https://forum.dlang.org/post/ngkhsaadchcqbdvmorot@forum.dlang.org
+The first version appeared here: https://forum.dlang.org/post/ngkhsaadchcqbdvmorot@forum.dlang.org ([Also archived here](https://github.com/BoQsc/Modern-Coreutils-D/blob/master/broadcast_change_.d))
 
 Simple Usage: 
 1. Download: Binary [SendMessage_WM_SETTINGCHANGE.exe](https://github.com/vaido-world/WM_SETTINGCHANGE/releases/latest/download/WM_SETTINGCHANGE.exe
